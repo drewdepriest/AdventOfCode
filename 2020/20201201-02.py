@@ -2,7 +2,7 @@ import os
 import itertools
 
 # Advent of Code 2020
-# Day 01
+# Day 01 | Part 02
 # https://adventofcode.com/2020/day/1
 
 # set path to local folder
@@ -16,7 +16,7 @@ with open(localFolder + '20201201input.txt', "r") as f:
     arr.append(int(stripped_line))
 
 prod = 0
-for numbers in itertools.combinations(arr,2):
+for numbers in itertools.combinations(arr,3):
     if sum(numbers) == 2020:
-        prod = numbers[0]*numbers[1]
-        print("product: " + str(prod)
+        prod = numbers[0]*numbers[1]*numbers[2]
+        print("product: " + str(prod))
