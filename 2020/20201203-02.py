@@ -35,13 +35,12 @@ prodTrees = 1
 for slope in slopes:
     numTrees = 0
     counter = 0
-    while counter < numLines:
-        
-        nextMove = str(inputArr[counter][(counter*slope[0])%numChars]) 
+    while counter*slope[1] < numLines-1: 
+        counter += 1
+        nextMove = str(inputArr[counter*slope[1]][(counter*slope[0])%numChars]) 
         if nextMove == tree:
             numTrees += 1
-        counter += slope[1]
-        
+
     prodTrees = prodTrees*numTrees
-    print("sumtrees: " + str(numTrees))
-print("prodtree: " + str(prodTrees))
+    print("numtrees: " + str(numTrees))
+print("prodtrees: " + str(prodTrees))
