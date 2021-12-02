@@ -1,5 +1,6 @@
 import os
 import itertools
+import re
 
 # Advent of Code 2020
 # Day 04 | Part 01
@@ -11,22 +12,27 @@ localFolder = os.getcwd() + "/2020/"
 inputArr = []
 numLines = 0
 numChars = 0
-with open(localFolder + '20201204input.txt', "r") as f:
-  for line in f:
-    tempArr = line.rstrip('\r\n') 
-    tempArr = tempArr.split('\n \n')
-    inputArr.append(tempArr)
-    numLines += 1
+filename = '20201204input.txt'
+#filename = '20201204input-sample.txt'
 
-lines = (line.rstrip() for line in open(localFolder + '20201204input.txt'))
-for line in lines:
-    tempArr2 = line.split('\n')
-    print(tempArr2)
+noBreak = ""
+with open(localFolder + filename, "r") as file:
+    
+    for readline in file: 
+        line_strip = readline.strip()
+        if line_strip == '':
+          noBreak += ','
+        else:
+          noBreak += line_strip
+        
+pwArray = noBreak.split(',')
 
-passFieldsReqd = ['byr','iyr','eyr','hgt','hcl''ecl','pid','cid']
+passFieldsReqd = ['byr:','iyr:','eyr:','hgt:','hcl:','ecl:','pid:','cid:']
 passFieldsOpt = ['cid']
-
 numValid = 0
+for pw in pwArray:
+    if passFieldsReqd[0] in pw and passFieldsReqd[1] in pw and passFieldsReqd[2] in pw and passFieldsReqd[3] in pw and passFieldsReqd[4] in pw and passFieldsReqd[5] in pw and passFieldsReqd[6] in pw:
+      numValid += 1
 
 
 print(str(numValid))
