@@ -2,7 +2,7 @@ import os
 
 
 # Advent of Code 2021
-# Day 01 } Part 02
+# Day 01 | Part 02
 # https://adventofcode.com/2021/day/1
 
 # set path to local folder
