@@ -48,3 +48,6 @@ power = gamma*epsilon
 print("gamma: " + str(gamma))
 print("epsilon: " + str(epsilon))
 print("power: " + str(power))
+
+oxygen = ''
+co2 = ''
